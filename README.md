@@ -79,6 +79,18 @@ Claude loads the skill when you mention Material 3, Material You, M3 Expressive,
 | effects default | 1600 | 1.0 | color and opacity |
 | effects slow | 800 | 1.0 | gentle color and opacity |
 
+### Component motion
+
+How each component actually moves. These SVGs are animated and play inline on GitHub (shown in ~3× slow motion so the easing is visible; progress indicators run at real speed).
+
+<img src="assets/motion-controls.svg" alt="Button, switch, checkbox, chip, slider and text field motion" width="100%"/>
+
+<img src="assets/motion-surfaces.svg" alt="Dialog, menu, bottom sheet, snackbar, card and FAB motion" width="100%"/>
+
+<img src="assets/motion-navigation.svg" alt="Navigation bar, tabs, shared axis, container transform and progress motion" width="100%"/>
+
+Timings, easing tokens and copy-paste CSS for every component are in [`component-motion.md`](material3-design-tokens/references/component-motion.md).
+
 ### State layers and elevation
 
 | State | Opacity | | Level | dp |
@@ -147,7 +159,8 @@ material3-design-tokens/
 │       ├── components-containment.md
 │       ├── components-navigation.md
 │       ├── components-inputs.md
-│       └── components-lists-feedback.md
+│       ├── components-lists-feedback.md
+│       └── component-motion.md
 ├── assets/                           # README visuals (SVG)
 └── README.md
 ```

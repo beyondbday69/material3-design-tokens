@@ -1,6 +1,6 @@
 ---
 name: material3-design-tokens
-description: Reference of Material Design 3 (M3, Material You, M3 Expressive) design tokens - motion (duration, easing, springs), shape, elevation, state layers, typography scale, window size classes, spacing, touch targets and component dimensions (buttons, FABs, chips, cards, dialogs, navigation, text fields, switch, slider, lists, pickers). Use this skill whenever the user mentions Material 3, Material You, m3.material.io, md.sys or md.comp tokens, Material animation/easing/duration values, Material Expressive springs, or asks for CSS, Compose, Flutter, or Android values that follow Material guidelines, even if they don't say "tokens". Also use when building UI that should "feel like Material" and needs concrete numbers.
+description: Reference of Material Design 3 (M3, Material You, M3 Expressive) design tokens - motion (duration, easing, springs), shape, elevation, state layers, typography scale, window size classes, spacing, touch targets and component dimensions and component motion recipes (buttons, FABs, chips, cards, dialogs, navigation, text fields, switch, slider, lists, pickers). Use this skill whenever the user mentions Material 3, Material You, m3.material.io, md.sys or md.comp tokens, Material animation/easing/duration values, Material Expressive springs, or asks for CSS, Compose, Flutter, or Android values that follow Material guidelines, even if they don't say "tokens". Also use when building UI that should "feel like Material" and needs concrete numbers.
 ---
 
 # Material 3 Design Tokens
@@ -23,6 +23,7 @@ m3.material.io is JavaScript-rendered, so for newer or exact values, web search 
 | App bars, navigation bar/rail/drawer, tabs, search | [references/components-navigation.md](references/components-navigation.md) |
 | Text fields, select, checkbox, radio, switch, slider | [references/components-inputs.md](references/components-inputs.md) |
 | Lists, data table, progress, banner, pickers | [references/components-lists-feedback.md](references/components-lists-feedback.md) |
+| How each component animates (timings, easing, CSS recipes) | [references/component-motion.md](references/component-motion.md) |
 
 ## How to apply
 
