@@ -127,7 +127,7 @@ Heights, shapes and icon sizes for 50+ components (buttons, FABs, chips, cards, 
 | Text field | 56 | extra-small (4) | 24 |
 | Switch | 52x32 track | full | 16 |
 
-Full tables live in [`SKILL.md`](material3-design-tokens/SKILL.md). Values come from Material Web component tokens (v0.192).
+Full tables live in [`references/`](material3-design-tokens/references). Values come from Material Web component tokens (v0.192).
 
 ---
 
@@ -136,8 +136,19 @@ Full tables live in [`SKILL.md`](material3-design-tokens/SKILL.md). Values come 
 ```
 material3-design-tokens/
 ├── material3-design-tokens/
-│   └── SKILL.md          # the skill itself
-├── assets/               # README visuals (SVG)
+│   ├── SKILL.md                      # short index, tells Claude which file to read
+│   └── references/
+│       ├── motion.md
+│       ├── shape.md
+│       ├── state-and-elevation.md
+│       ├── typography.md
+│       ├── layout.md
+│       ├── components-actions.md
+│       ├── components-containment.md
+│       ├── components-navigation.md
+│       ├── components-inputs.md
+│       └── components-lists-feedback.md
+├── assets/                           # README visuals (SVG)
 └── README.md
 ```
 
