@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="260" viewBox="0 0 960 260" role="img" aria-label="Material 3 easing curves">
+  <rect width="960" height="260" rx="28" fill="#FEF7FF"/>
+  <g font-family="Roboto, 'Segoe UI', system-ui, sans-serif" text-anchor="middle">
+    <!-- each plot: 160x120 at y=36 -->
+    <g transform="translate(100,36)"><rect width="160" height="120" rx="16" fill="#F3EDF7"/><path d="M12 108 C12 108 148 12 148 12" stroke="#6750A4" stroke-width="3" fill="none" stroke-linecap="round"/><text x="80" y="152" font-size="13" font-weight="500" fill="#1D1B20">linear</text><text x="80" y="170" font-size="11" fill="#49454F">0, 0, 1, 1</text></g>
+    <g transform="translate(300,36)"><rect width="160" height="120" rx="16" fill="#F3EDF7"/><path d="M12 108 C44 108 44 12 148 12" stroke="#6750A4" stroke-width="3" fill="none" stroke-linecap="round"/><text x="80" y="152" font-size="13" font-weight="500" fill="#1D1B20">standard</text><text x="80" y="170" font-size="11" fill="#49454F">0.2, 0, 0, 1</text></g>
+    <g transform="translate(500,36)"><rect width="160" height="120" rx="16" fill="#F3EDF7"/><path d="M12 108 C12 108 14 40 148 12" stroke="#7D5260" stroke-width="3" fill="none" stroke-linecap="round" transform="translate(0,0)"/><text x="80" y="152" font-size="13" font-weight="500" fill="#1D1B20">decelerate</text><text x="80" y="170" font-size="11" fill="#49454F">0, 0, 0, 1</text></g>
+    <g transform="translate(700,36)"><rect width="160" height="120" rx="16" fill="#F3EDF7"/><path d="M12 108 C60 108 148 108 148 12" stroke="#B3261E" stroke-width="3" fill="none" stroke-linecap="round"/><text x="80" y="152" font-size="13" font-weight="500" fill="#1D1B20">accelerate</text><text x="80" y="170" font-size="11" fill="#49454F">0.3, 0, 1, 1</text></g>
+    <text x="480" y="228" font-size="12" fill="#49454F">Enter: decelerate · Exit: accelerate · Move on screen: standard / emphasized</text>
+  </g>
+</svg>

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="200" viewBox="0 0 960 200" role="img" aria-label="Material 3 baseline color roles">
+  <rect width="960" height="200" rx="28" fill="#FEF7FF"/>
+  <g font-family="Roboto, 'Segoe UI', system-ui, sans-serif" font-size="12" font-weight="500">
+    <rect x="24" y="24" width="140" height="72" rx="16" fill="#6750A4"/><text x="40" y="66" fill="#FFFFFF">primary</text><text x="40" y="84" fill="#EADDFF" font-weight="400">#6750A4</text>
+    <rect x="176" y="24" width="140" height="72" rx="16" fill="#EADDFF"/><text x="192" y="66" fill="#21005D">primaryContainer</text><text x="192" y="84" fill="#4F378B" font-weight="400">#EADDFF</text>
+    <rect x="328" y="24" width="140" height="72" rx="16" fill="#625B71"/><text x="344" y="66" fill="#FFFFFF">secondary</text><text x="344" y="84" fill="#E8DEF8" font-weight="400">#625B71</text>
+    <rect x="480" y="24" width="140" height="72" rx="16" fill="#E8DEF8"/><text x="496" y="66" fill="#1D192B">secondaryContainer</text><text x="496" y="84" fill="#4A4458" font-weight="400">#E8DEF8</text>
+    <rect x="632" y="24" width="140" height="72" rx="16" fill="#7D5260"/><text x="648" y="66" fill="#FFFFFF">tertiary</text><text x="648" y="84" fill="#FFD8E4" font-weight="400">#7D5260</text>
+    <rect x="784" y="24" width="152" height="72" rx="16" fill="#FFD8E4"/><text x="800" y="66" fill="#31111D">tertiaryContainer</text><text x="800" y="84" fill="#633B48" font-weight="400">#FFD8E4</text>
+
+    <rect x="24" y="108" width="140" height="68" rx="16" fill="#B3261E"/><text x="40" y="146" fill="#FFFFFF">error</text><text x="40" y="164" fill="#F9DEDC" font-weight="400">#B3261E</text>
+    <rect x="176" y="108" width="140" height="68" rx="16" fill="#F3EDF7" stroke="#CAC4D0"/><text x="192" y="146" fill="#1D1B20">surfaceContainer</text><text x="192" y="164" fill="#49454F" font-weight="400">#F3EDF7</text>
+    <rect x="328" y="108" width="140" height="68" rx="16" fill="#E7E0EC"/><text x="344" y="146" fill="#1D1B20">surfaceVariant</text><text x="344" y="164" fill="#49454F" font-weight="400">#E7E0EC</text>
+    <rect x="480" y="108" width="140" height="68" rx="16" fill="#1D1B20"/><text x="496" y="146" fill="#FEF7FF">onSurface</text><text x="496" y="164" fill="#CAC4D0" font-weight="400">#1D1B20</text>
+    <rect x="632" y="108" width="140" height="68" rx="16" fill="#79747E"/><text x="648" y="146" fill="#FFFFFF">outline</text><text x="648" y="164" fill="#E6E0E9" font-weight="400">#79747E</text>
+    <rect x="784" y="108" width="152" height="68" rx="16" fill="#CAC4D0"/><text x="800" y="146" fill="#1D1B20">outlineVariant</text><text x="800" y="164" fill="#49454F" font-weight="400">#CAC4D0</text>
+  </g>
+</svg>

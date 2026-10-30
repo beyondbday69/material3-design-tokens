@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="190" viewBox="0 0 960 190" role="img" aria-label="Material 3 shape corner scale">
+  <rect width="960" height="190" rx="28" fill="#FEF7FF"/>
+  <g font-family="Roboto, 'Segoe UI', system-ui, sans-serif" text-anchor="middle">
+    <rect x="30"  y="28" width="108" height="86" rx="0"  fill="#EADDFF" stroke="#6750A4" stroke-width="2"/><text x="84"  y="146" font-size="14" font-weight="500" fill="#1D1B20">None</text><text x="84"  y="166" font-size="12" fill="#49454F">0dp</text>
+    <rect x="168" y="28" width="108" height="86" rx="4"  fill="#EADDFF" stroke="#6750A4" stroke-width="2"/><text x="222" y="146" font-size="14" font-weight="500" fill="#1D1B20">Extra small</text><text x="222" y="166" font-size="12" fill="#49454F">4dp</text>
+    <rect x="306" y="28" width="108" height="86" rx="8"  fill="#EADDFF" stroke="#6750A4" stroke-width="2"/><text x="360" y="146" font-size="14" font-weight="500" fill="#1D1B20">Small</text><text x="360" y="166" font-size="12" fill="#49454F">8dp</text>
+    <rect x="444" y="28" width="108" height="86" rx="12" fill="#EADDFF" stroke="#6750A4" stroke-width="2"/><text x="498" y="146" font-size="14" font-weight="500" fill="#1D1B20">Medium</text><text x="498" y="166" font-size="12" fill="#49454F">12dp</text>
+    <rect x="582" y="28" width="108" height="86" rx="16" fill="#EADDFF" stroke="#6750A4" stroke-width="2"/><text x="636" y="146" font-size="14" font-weight="500" fill="#1D1B20">Large</text><text x="636" y="166" font-size="12" fill="#49454F">16dp</text>
+    <rect x="720" y="28" width="108" height="86" rx="28" fill="#EADDFF" stroke="#6750A4" stroke-width="2"/><text x="774" y="146" font-size="14" font-weight="500" fill="#1D1B20">Extra large</text><text x="774" y="166" font-size="12" fill="#49454F">28dp</text>
+    <rect x="858" y="28" width="80"  height="86" rx="40" fill="#EADDFF" stroke="#6750A4" stroke-width="2"/><text x="898" y="146" font-size="14" font-weight="500" fill="#1D1B20">Full</text><text x="898" y="166" font-size="12" fill="#49454F">50%</text>
+  </g>
+</svg>

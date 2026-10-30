@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="320" viewBox="0 0 960 320" role="img" aria-label="Material 3 Design Tokens">
+  <rect width="960" height="320" rx="28" fill="#EADDFF"/>
+  <circle cx="860" cy="60" r="120" fill="#D0BCFF" opacity="0.55"/>
+  <rect x="700" y="170" width="220" height="220" rx="56" fill="#FFD8E4" opacity="0.9"/>
+  <circle cx="780" cy="250" r="56" fill="#E8DEF8"/>
+  <g font-family="Roboto, 'Google Sans', 'Segoe UI', system-ui, sans-serif">
+    <text x="48" y="104" font-size="22" font-weight="500" fill="#4F378B" letter-spacing="0.5">CLAUDE SKILL</text>
+    <text x="48" y="172" font-size="57" font-weight="500" fill="#21005D">Material 3</text>
+    <text x="48" y="228" font-size="45" font-weight="400" fill="#4F378B">Design Tokens</text>
+    <text x="48" y="272" font-size="16" fill="#49454F">Motion · Shape · Elevation · State · Type · Layout</text>
+  </g>
+</svg>
