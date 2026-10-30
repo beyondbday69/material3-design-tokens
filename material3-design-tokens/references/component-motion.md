@@ -28,7 +28,7 @@ Per-component timings below are recommended defaults built from the M3 rules of 
 | Switch | handle size 16/28/24, position, track color | short4 | spatial spring / standard |
 | Checkbox | fill, check stroke draw | short4 | standard |
 | Filter chip | container fill, check icon, label shift | medium1 | standard |
-| Slider | active track, handle, state layer | short2 | standard |
+| Slider (Expressive) | handle width 4 to 2 when pressed, active/inactive track resize, value indicator | short2 | standard |
 | Text field | label float + scale, outline 1 to 2dp | medium1 | standard |
 | Dialog | scrim fade, container scale + fade | enter medium3, exit short4 | emphasized-decelerate / accelerate |
 | Menu | container scaleY from anchor, items fade | enter medium1, exit short2 | emphasized-decelerate |
@@ -40,7 +40,8 @@ Per-component timings below are recommended defaults built from the M3 rules of 
 | Tabs | indicator slide, label color | medium1 | standard |
 | Shared axis X | translateX 30dp + fade | out short2 (90ms), in 210ms | accelerate / decelerate |
 | Container transform | bounds + radius morph, content crossfade | long2 | emphasized |
-| Progress | indeterminate loop | 1.4 to 2 s | standard |
+| Progress (wavy) | wave travels 1 wavelength/s, amplitude ramps 0 to full between 10% and 95%, determinate change | ramp long2, change long2 | standard / linear |
+| Progress (flat, indeterminate) | bars or arc loop | 1.4 to 2 s | standard |
 
 ## Button
 
@@ -183,7 +184,27 @@ Container transform: animate the card's box (position, size, radius) into the de
 
 Fade through: outgoing fades out in 90ms, incoming fades in and scales from 0.92 to 1 over 210ms.
 
-## Progress (indeterminate)
+## Slider (Expressive)
+
+Full spec in [components-slider-progress.md](components-slider-progress.md).
+
+```css
+.md-slider__handle { width: 4px; transition: width var(--md-sys-motion-duration-short2) var(--md-sys-motion-easing-standard); }
+.md-slider__handle:active, .md-slider__handle:focus-visible { width: 2px; }  /* pressed/focused handle narrows */
+.md-slider__active, .md-slider__inactive { transition: width 0s; }           /* track follows the handle with no lag */
+```
+
+## Wavy progress
+
+On the web draw the active part as an SVG path of a sine wave (amplitude 3, wavelength 40 for linear; amplitude 1.6, wavelength 15 for circular) and shift its phase at 1 wavelength per second. Fade the amplitude to 0 below 10% and above 95% progress over long2.
+
+```css
+@keyframes md-wave { to { transform: translateX(-40px); } }   /* one wavelength */
+.md-linear-wavy__active { animation: md-wave 1s linear infinite; }
+.md-linear-wavy { clip-path: inset(0 var(--remaining, 40%) 0 0 round 2px); }
+```
+
+## Progress (flat, indeterminate)
 
 ```css
 @keyframes md-spin { to { transform: rotate(360deg); } }

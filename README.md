@@ -79,6 +79,16 @@ Claude loads the skill when you mention Material 3, Material You, M3 Expressive,
 | effects default | 1600 | 1.0 | color and opacity |
 | effects slow | 800 | 1.0 | gentle color and opacity |
 
+### Slider and progress (Expressive)
+
+The current Material sliders and progress indicators look different from the 2023 versions: pill handle with a gap, five sizes, wavy progress with a stop indicator.
+
+<img src="assets/slider-sizes.svg" alt="Slider sizes XS to XL" width="100%"/>
+
+<img src="assets/progress-variants.svg" alt="Flat and wavy progress indicators" width="100%"/>
+
+Full spec, Compose, Android and CSS in [`components-slider-progress.md`](material3-design-tokens/references/components-slider-progress.md).
+
 ### Component motion
 
 How each component actually moves. These SVGs are animated and play inline on GitHub (shown in ~3× slow motion so the easing is visible; progress indicators run at real speed).
@@ -160,6 +170,7 @@ material3-design-tokens/
 │       ├── components-navigation.md
 │       ├── components-inputs.md
 │       ├── components-lists-feedback.md
+│       ├── components-slider-progress.md
 │       └── component-motion.md
 ├── assets/                           # README visuals (SVG)
 └── README.md

@@ -1,4 +1,6 @@
-import sys
+import sys,os
+sys.path.insert(0,os.path.dirname(os.path.abspath(__file__)))
+import m3_shapes as M
 OUT=sys.argv[1]
 STD='cubic-bezier(.2,0,0,1)'; DEC='cubic-bezier(.05,.7,.1,1)'; ACC='cubic-bezier(.3,0,.8,.15)'; LIN='linear'
 FONT="Roboto,'Segoe UI',system-ui,sans-serif"
@@ -57,12 +59,9 @@ lb=d.anim([(0,'transform:translateX(0)'),(25,'transform:translateX(0)'),(44,'tra
 bo=d.anim([(0,'stroke-opacity:1'),(25,'stroke-opacity:1'),(44,'stroke-opacity:0'),(66,'stroke-opacity:0'),(82,'stroke-opacity:1'),(100,'stroke-opacity:1')])
 st='<g transform="translate(85,56)"><rect x=".5" y=".5" width="119" height="31" rx="8" fill="none" stroke="%s" %s/><rect width="120" height="32" rx="8" fill="%s" %s/><path d="M11 16 L15 20 L22 11" fill="none" stroke="#4A4458" stroke-width="2" %s/><text x="16" y="21" font-size="14" font-weight="500" fill="#1D192B" %s>Filter</text></g>'%(OUTL,bo,SC,bg,ck,lb)
 d.panel(X[0],Y[1],'Filter chip','32dp · radius 8 · label shifts, check fades in · medium1',st)
-# E slider
-act=d.anim([(0,'transform:scaleX(.2)'),(15,'transform:scaleX(.2)'),(45,'transform:scaleX(.65)'),(70,'transform:scaleX(.65)'),(95,'transform:scaleX(.2)'),(100,'transform:scaleX(.2)')])
-hdl=d.anim([(0,'transform:translateX(40px)'),(15,'transform:translateX(40px)'),(45,'transform:translateX(130px)'),(70,'transform:translateX(130px)'),(95,'transform:translateX(40px)'),(100,'transform:translateX(40px)')])
-hal=d.anim([(0,'opacity:0'),(12,'opacity:0'),(18,'opacity:.14'),(48,'opacity:.14'),(54,'opacity:0'),(100,'opacity:0')],timing=LIN)
-st='<g transform="translate(45,75)"><rect y="-2" width="200" height="4" rx="2" fill="#E7E0EC"/><rect class="tl" y="-2" width="200" height="4" rx="2" fill="%s" %s/><g %s><circle r="20" fill="%s" %s/><circle r="10" fill="%s"/></g></g>'%(PRI,act,hdl,PRI,hal,PRI)
-d.panel(X[1],Y[1],'Slider','track 4dp · handle 20dp · state layer 40dp',st)
+# E slider (Expressive XS)
+st='<g transform="translate(45,67)">%s</g>'%M.slider_animated_xs()
+d.panel(X[1],Y[1],'Slider','track 16 · handle 4×44 (2 pressed) · gap 6 · stop 4',st)
 # F text field
 bd=d.anim([(0,'stroke:#79747E;stroke-width:1'),(10,'stroke:#79747E;stroke-width:1'),(26,'stroke:#6750A4;stroke-width:2'),(70,'stroke:#6750A4;stroke-width:2'),(84,'stroke:#79747E;stroke-width:1'),(100,'stroke:#79747E;stroke-width:1')])
 lab=d.anim([(0,'transform:translateY(0) scale(1);fill:#49454F'),(10,'transform:translateY(0) scale(1);fill:#49454F'),(26,'transform:translateY(-30px) scale(.75);fill:#6750A4'),(70,'transform:translateY(-30px) scale(.75);fill:#6750A4'),(84,'transform:translateY(0) scale(1);fill:#49454F'),(100,'transform:translateY(0) scale(1);fill:#49454F')])
@@ -151,14 +150,11 @@ sm=d.anim([(0,'opacity:1'),(15,'opacity:1'),(24,'opacity:0'),(68,'opacity:0'),(9
 bigc=d.anim([(0,'opacity:0'),(34,'opacity:0'),(46,'opacity:1'),(66,'opacity:1'),(72,'opacity:0'),(100,'opacity:0')],timing=LIN)
 st='<rect x="30" y="14" width="230" height="128" rx="12" fill="#fff" stroke="#E7E0EC"/><rect x="42" y="24" width="100" height="6" rx="3" fill="#E7E0EC"/><rect x="42" y="38" width="130" height="5" rx="2.5" fill="#EFE9F3"/><rect fill="%s" x="60" y="80" width="90" height="56" rx="12">%s%s%s%s</rect><rect x="72" y="94" width="46" height="6" rx="3" fill="#21005D" %s/><rect x="72" y="108" width="64" height="5" rx="2.5" fill="#7F67BE" %s/><g %s><rect x="46" y="28" width="90" height="8" rx="4" fill="#21005D"/><rect x="46" y="48" width="196" height="6" rx="3" fill="#7F67BE"/><rect x="46" y="62" width="170" height="6" rx="3" fill="#7F67BE"/><rect x="46" y="76" width="184" height="6" rx="3" fill="#7F67BE"/></g>'%(PC,an('x','60;60;30;30;60;60'),an('y','80;80;14;14;80;80'),an('width','90;90;230;230;90;90'),an('height','56;56;128;128;56;56')+an('rx','12;12;12;12;12;12'),sm,sm,bigc)
 d.panel(X[0],Y[1],'Container transform','card grows into the page · 500ms emphasized',st)
-# E linear indeterminate
-b1=d.anim([(0,'transform:translateX(-80px) scaleX(.5)'),(60,'transform:translateX(150px) scaleX(1.4)'),(100,'transform:translateX(330px) scaleX(.5)')],dur=2,timing=STD)
-b2=d.anim([(0,'transform:translateX(-80px) scaleX(.5)'),(50,'transform:translateX(-80px) scaleX(.5)'),(100,'transform:translateX(330px) scaleX(.4)')],dur=2,timing=STD,delay=.4)
-st='<clipPath id="lc"><rect x="45" y="73" width="200" height="4" rx="2"/></clipPath><rect x="45" y="73" width="200" height="4" rx="2" fill="#E7E0EC"/><g clip-path="url(#lc)"><rect class="tl" x="45" y="73" width="80" height="4" fill="%s" %s/><rect class="tl" x="45" y="73" width="80" height="4" fill="%s" %s/></g>'%(PRI,b1,PRI,b2)
-d.panel(X[1],Y[1],'Linear progress','4dp track · indeterminate (real speed)',st)
-# F circular
-rot=d.anim([(0,'transform:rotate(0)'),(100,'transform:rotate(360deg)')],dur=1.6,timing=LIN)
-dsh=d.anim([(0,'stroke-dasharray:6 107;stroke-dashoffset:0'),(50,'stroke-dasharray:72 41;stroke-dashoffset:-22'),(100,'stroke-dasharray:6 107;stroke-dashoffset:-113')],dur=1.6,timing=STD)
-st='<g transform="translate(145,75)"><g class="t" %s><circle class="t" r="18" fill="none" stroke="%s" stroke-width="4" stroke-linecap="round" %s/></g></g>'%(rot,PRI,dsh)
-d.panel(X[2],Y[1],'Circular progress','48dp · stroke 4dp · indeterminate (real speed)',st)
+# E wavy linear determinate
+pf=lambda t: .05 if t<.4 else (min(1.0,.05+(t-.4)/2.4*.95) if t<2.8 else (1.0 if t<3.5 else .05))
+st='<g transform="translate(35,75)">%s</g>'%M.linear_stage(220,0,4,3,40,pf,48,4)
+d.panel(X[1],Y[1],'Wavy linear progress','amp 3 · wavelength 40 · gap 4 · stop 4 · 1 wave/s',st)
+# F wavy circular determinate
+st='<g transform="translate(145,75) scale(2)">%s</g>'%M.circular_stage(0,0,22,4,1.6,15,.7,12,1)
+d.panel(X[2],Y[1],'Wavy circular progress','48dp · stroke 4 · amp 1.6 · wavelength 15',st)
 d.write('motion-navigation.svg','Transitions shown in ~3× slow motion · progress indicators at real speed.')

@@ -8,8 +8,8 @@ Source: Material Web component tokens v0.192 (generated from the M3 spec). Sizes
 |---|---|---|
 | List item | 56 (1 line), 72 (2 lines), 88 (3 lines) | leading/trailing space 16; avatar 40; icon 24; image 56x56; video 100x56 |
 | Data table | header 56, row 52, footer 52 | 1 outline; container extra-small (4) |
-| Circular progress | 48, stroke 4 | |
-| Linear progress | 4 high | track and indicator shape none |
+| Circular progress (flat / wavy) | 40 / 48, stroke 4, gap 4 | see [components-slider-progress.md](components-slider-progress.md) |
+| Linear progress (flat / wavy) | 4 high / 10 high, gap 4, stop 4 | see [components-slider-progress.md](components-slider-progress.md) |
 | Banner | mobile 54 (1 line), 112 (2 lines); desktop 52 (1 line) | shape none; image 40 |
 | Date picker modal | 360x568 | shape extra-large (28); day cell 40 |
 | Date picker docked | 360x456 | shape large (16); day cell 48 |

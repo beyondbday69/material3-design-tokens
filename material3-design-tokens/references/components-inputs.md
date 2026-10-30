@@ -12,4 +12,4 @@ Source: Material Web component tokens v0.192 (generated from the M3 spec). Sizes
 | Checkbox | 18 box, 40 state layer | 2 box radius | unselected outline 2 |
 | Radio | 20 icon, 40 state layer | full | |
 | Switch | track 52x32, outline 2 | full | handle: 16 off, 24 on/with icon, 28 pressed; icon 16 |
-| Slider | track 4, handle 20, state layer 40 | full | value label 28 high; tick 2 |
+| Slider (Expressive) | track 16 to 96, handle 4×44 to 4×108, gap 6 | full / by size | see [components-slider-progress.md](components-slider-progress.md) |
