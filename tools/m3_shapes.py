@@ -31,7 +31,7 @@ def wave_line(x0,x1,y,A,lam,phase,N=60):
     out=[]
     for i in range(N+1):
         x=x0+(x1-x0)*i/float(N)
-        out.append((x,y+A*math.sin(2*math.pi*(x-x0)/lam-phase)))
+        out.append((x,y+A*math.sin(2*math.pi*(x-x0)/lam+phase)))
     return out
 def smooth(t): t=max(0,min(1,t)); return t*t*(3-2*t)
 def linear_frames(L,y,thick,A,lam,pfun,nfr,dur,speed_wl_per_s=1.0,gap=4):
@@ -59,7 +59,7 @@ def circ_pts(cx,cy,R,a0,sweep,A,lam,phase,N=80):
     for i in range(N+1):
         th=a0+sweep*i/float(N)
         arc=R*(th-a0)
-        r=R+A*math.sin(2*math.pi*arc/lam-phase)
+        r=R+A*math.sin(2*math.pi*arc/lam+phase)
         out.append((cx+r*math.cos(th),cy+r*math.sin(th)))
     return out
 def circular_frames(cx,cy,R,thick,A,lam,p,nfr,dur,gap=4):
