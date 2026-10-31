@@ -32,6 +32,7 @@ Per-component timings below are recommended defaults built from the M3 rules of 
 | Text field | label float + scale, outline 1 to 2dp | medium1 | standard |
 | Dialog | scrim fade, container scale + fade | enter medium3, exit short4 | emphasized-decelerate / accelerate |
 | Menu | container scaleY from anchor, items fade | enter medium1, exit short2 | emphasized-decelerate |
+| Button group | pressed width +15%, neighbors compress, shape morph (round to pressed) | fast spatial spring (Standard 1400 / 0.9, Expressive 800 / 0.6) | spring |
 | Bottom sheet | translateY, scrim, top corners | see [Bottom sheet](#bottom-sheet) | spring (Compose) / fast-out-slow-in 300ms |
 | Snackbar | translateY + fade in, fade out | enter medium1, exit short2 | emphasized-decelerate |
 | Card | elevation, state layer | short3 | standard |
@@ -110,6 +111,14 @@ Per-component timings below are recommended defaults built from the M3 rules of 
   transition: transform var(--md-sys-motion-duration-medium1) var(--md-sys-motion-easing-emphasized-decelerate),
               opacity var(--md-sys-motion-duration-short2) linear; }
 .md-menu[open] { opacity: 1; transform: scaleY(1); }
+```
+
+## Button group
+
+Pressed button grows by 15% of its width, neighbors give up the same amount, and the pressed button's corners morph to the size's pressed shape. Full rules, per-size shapes and a JS helper are in [components-button-group.md](components-button-group.md).
+
+```css
+.md-button-group > .md-btn { transition: width 120ms cubic-bezier(0.34, 1.3, 0.64, 1), border-radius 120ms cubic-bezier(0.34, 1.3, 0.64, 1); }
 ```
 
 ## Bottom sheet

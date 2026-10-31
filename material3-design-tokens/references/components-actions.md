@@ -14,3 +14,5 @@ Source: Material Web component tokens v0.192 (generated from the M3 spec). Sizes
 | FAB large | 96x96 | extra-large (28) | 36 | |
 | Extended FAB | 56 | large (16) | 24 | |
 | Chip (assist / filter / input / suggestion) | 32 | small (8) | 18 | 1 outline; input avatar 24 |
+
+Button sizes XS to XL, pressed shapes and button groups: see [components-button-group.md](components-button-group.md).

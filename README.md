@@ -79,6 +79,14 @@ Claude loads the skill when you mention Material 3, Material You, M3 Expressive,
 | effects default | 1600 | 1.0 | color and opacity |
 | effects slow | 800 | 1.0 | gentle color and opacity |
 
+### Button group (Expressive)
+
+Press one button and it grows while its neighbors compress. Standard and connected groups, with the shape morph on press.
+
+<img src="assets/button-group.svg" alt="Button group press animation" width="100%"/>
+
+Rules, sizes XS to XL, Compose, Android and a JS helper in [`components-button-group.md`](material3-design-tokens/references/components-button-group.md).
+
 ### Slider and progress (Expressive)
 
 The current Material sliders and progress indicators look different from the 2023 versions: pill handle with a gap, five sizes, wavy progress with a stop indicator.
@@ -170,6 +178,7 @@ material3-design-tokens/
 │       ├── components-navigation.md
 │       ├── components-inputs.md
 │       ├── components-lists-feedback.md
+│       ├── components-button-group.md
 │       ├── components-slider-progress.md
 │       └── component-motion.md
 ├── assets/                           # README visuals (SVG)
