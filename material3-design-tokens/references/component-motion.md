@@ -1,6 +1,6 @@
 # Component motion recipes
 
-What animates on each component, with which duration and easing token, plus drop-in CSS. Tokens come from [motion.md](motion.md). Spring-like overshoot is approximated on the web with `cubic-bezier(0.34, 1.56, 0.64, 1)` (use real springs on Compose/Flutter).
+What animates on each component, with which duration and easing token, plus drop-in CSS. Tokens come from [motion.md](motion.md). Spring-like overshoot is approximated on the web with `cubic-bezier(0.34, 1.56, 0.64, 1)` (use real springs on Compose/Flutter). Spring stiffness and damping values are in [motion.md](motion.md).
 
 Per-component timings below are recommended defaults built from the M3 rules of thumb (small = short, containers = medium, full screen = long; enter decelerates, exit accelerates and is shorter). Verify against m3.material.io for exact spec values.
 
@@ -32,7 +32,7 @@ Per-component timings below are recommended defaults built from the M3 rules of 
 | Text field | label float + scale, outline 1 to 2dp | medium1 | standard |
 | Dialog | scrim fade, container scale + fade | enter medium3, exit short4 | emphasized-decelerate / accelerate |
 | Menu | container scaleY from anchor, items fade | enter medium1, exit short2 | emphasized-decelerate |
-| Bottom sheet | translateY, scrim | enter long2, exit medium2 | emphasized-decelerate / accelerate |
+| Bottom sheet | translateY, scrim, top corners | see [Bottom sheet](#bottom-sheet) | spring (Compose) / fast-out-slow-in 300ms |
 | Snackbar | translateY + fade in, fade out | enter medium1, exit short2 | emphasized-decelerate |
 | Card | elevation, state layer | short3 | standard |
 | FAB (extended) | width morph, label fade | medium3 | emphasized |
@@ -114,11 +114,44 @@ Per-component timings below are recommended defaults built from the M3 rules of 
 
 ## Bottom sheet
 
+Values from Compose Material3 (`ModalBottomSheet`, `BottomSheetScaffold`, `SheetDefaults`) and Material Components Android (`BottomSheetBehavior`).
+
+| What | Value |
+|---|---|
+| Show (translateY 100% to rest) | Compose scaffold: spatial default spring (Standard 700 / 0.9, Expressive 380 / 0.8) |
+| Hide | Compose scaffold: fast effects spring (3800 / 1.0), no overshoot |
+| Drag release / settle between anchors | spatial default spring; older Compose: tween 300ms `FastOutSlowInEasing` = `cubic-bezier(0.4, 0, 0.2, 1)` |
+| Scrim (modal only) | black at 0.32 alpha, fades with the default effects spring (1600 / 1.0) |
+| Top corner morph (Android views) | 28 to 0 when the sheet expands to full height, 500ms (long2) |
+| Anchors | hidden, partially expanded (peek, default auto; half-expanded ratio 0.5), expanded |
+
+Static spec: container `surface-container-low`, shape `extra-large` top (28), none when minimized or full screen, elevation level 1 (modal and standard), max width 640, drag handle 32×4 in `on-surface-variant` inside a 48dp touch area (22dp vertical padding). Standard (non-modal) sheets have no scrim.
+
+Approximate settle times for the springs (stiffness `k`, damping ratio `z`, mass 1; time to settle about 4 / (z · sqrt(k))): standard spatial default about 0.17 s, expressive spatial default about 0.2 s plus visible overshoot, fast effects (hide) about 0.1 s. These are estimates, not spec values.
+
+Web approximation (no spring): use the 300ms tween both ways, or a CSS `linear()` easing sampled from the spring.
+
 ```css
-.md-sheet { transform: translateY(100%);
-  transition: transform var(--md-sys-motion-duration-medium2) var(--md-sys-motion-easing-emphasized-accelerate); }
-.md-sheet[open] { transform: translateY(0);
-  transition: transform var(--md-sys-motion-duration-long2) var(--md-sys-motion-easing-emphasized-decelerate); }
+.md-sheet {
+  transform: translateY(100%);
+  transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.md-sheet[open] { transform: translateY(0); }
+
+.md-scrim { opacity: 0; transition: opacity 200ms linear; }
+.md-sheet[open] ~ .md-scrim { opacity: 0.32; }
+
+/* optional: corners flatten when the sheet reaches full height */
+.md-sheet { border-radius: 28px 28px 0 0; transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1), border-radius 500ms cubic-bezier(0.2, 0, 0, 1); }
+.md-sheet--full { border-radius: 0; }
+```
+
+```kotlin
+// Compose: spring specs come from the theme's MotionScheme
+val sheetState = rememberModalBottomSheetState(skipPartiallyExpanded = false)
+ModalBottomSheet(onDismissRequest = { /* ... */ }, sheetState = sheetState) { /* content */ }
+// MaterialTheme.motionScheme.defaultSpatialSpec<Float>()  -> show / settle
+// MaterialTheme.motionScheme.fastEffectsSpec<Float>()     -> hide
 ```
 
 ## Snackbar

@@ -91,10 +91,11 @@ st='<g transform="translate(70,10)"><rect width="100" height="32" rx="16" fill="
 st=st.replace('width="150" height="90"','width="130" height="100"')
 d.panel(X[1],Y[0],'Menu','radius 4 · item 48dp · grows from anchor · medium1',st)
 # C bottom sheet
-sc2=d.anim([(0,'opacity:0'),(8,'opacity:0'),(40,'opacity:.32'),(66,'opacity:.32'),(85,'opacity:0'),(100,'opacity:0')],timing=LIN)
-sh=d.anim([(0,'transform:translateY(90px)'),(8,'transform:translateY(90px);animation-timing-function:%s'%DEC),(45,'transform:translateY(0)'),(66,'transform:translateY(0);animation-timing-function:%s'%ACC),(85,'transform:translateY(90px)'),(100,'transform:translateY(90px)')])
+sc2=d.anim([(0,'opacity:0'),(8,'opacity:0'),(26,'opacity:.32'),(66,'opacity:.32'),(84,'opacity:0'),(100,'opacity:0')],timing=LIN)
+FS='cubic-bezier(.4,0,.2,1)'
+sh=d.anim([(0,'transform:translateY(90px)'),(8,'transform:translateY(90px);animation-timing-function:%s'%FS),(31,'transform:translateY(0)'),(66,'transform:translateY(0);animation-timing-function:%s'%FS),(89,'transform:translateY(90px)'),(100,'transform:translateY(90px)')])
 inner='<clipPath id="pc"><rect width="150" height="130" rx="14"/></clipPath><g clip-path="url(#pc)"><rect width="150" height="130" fill="#000" %s/><g %s><path d="M0 130 V78 Q0 48 28 48 H122 Q150 48 150 78 V130 Z" fill="#F3EDF7"/><rect x="59" y="56" width="32" height="4" rx="2" fill="%s" opacity=".4"/><rect x="20" y="74" width="80" height="7" rx="3.5" fill="#CAC4D0"/><rect x="20" y="90" width="110" height="5" rx="2.5" fill="#E0DAE6"/><rect x="20" y="102" width="96" height="5" rx="2.5" fill="#E0DAE6"/></g></g>'%(sc2,sh,ONSV)
-d.panel(X[2],Y[0],'Bottom sheet','top radius 28 · handle 32×4 · enter 500ms decelerate',phone(inner))
+d.panel(X[2],Y[0],'Bottom sheet','top radius 28 · handle 32×4 · scrim .32 · 300ms (tween)',phone(inner))
 # D snackbar
 sn=d.anim([(0,'opacity:0;transform:translateY(24px)'),(10,'opacity:0;transform:translateY(24px);animation-timing-function:%s'%DEC),(28,'opacity:1;transform:translateY(0)'),(70,'opacity:1;transform:translateY(0)'),(78,'opacity:0;transform:translateY(0)'),(100,'opacity:0;transform:translateY(0)')])
 inner='<g %s><rect x="8" y="66" width="134" height="48" rx="4" fill="#322F35"/><text x="20" y="94" font-size="12" fill="#F5EFF7">Saved</text><text x="108" y="94" font-size="12" font-weight="500" fill="#D0BCFF">Undo</text></g>'%sn

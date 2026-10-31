@@ -27,18 +27,20 @@
 
 `emphasized` is a two-segment spline. Native (Android/Flutter) can use it directly. On the web use the `path()` form where supported (e.g. `linear()` or `path()` in newer browsers), otherwise approximate with `cubic-bezier(0.2, 0, 0, 1)`.
 
-## Motion: M3 Expressive springs
+## Motion: springs (Compose `MotionScheme`)
 
-| Spring | Stiffness | Damping ratio | Use |
+Two schemes. **Standard** is the Compose default. **Expressive** (`MaterialExpressiveTheme`) uses bouncier, slower spatial springs. Effects springs are the same in both.
+
+| Spring | Standard stiffness / damping | Expressive stiffness / damping | Use |
 |---|---|---|---|
-| spatial fast | 1400 | 0.9 | small position/size/shape changes |
-| spatial default | 700 | 0.9 | most spatial motion |
-| spatial slow | 300 | 0.9 | large, full-screen movement |
-| effects fast | 3800 | 1.0 | color/opacity, quick |
-| effects default | 1600 | 1.0 | color/opacity |
-| effects slow | 800 | 1.0 | color/opacity, gentle |
+| spatial fast | 1400 / 0.9 | 800 / 0.6 | small position, size, shape changes |
+| spatial default | 700 / 0.9 | 380 / 0.8 | most spatial motion |
+| spatial slow | 300 / 0.9 | 200 / 0.8 | large, full-screen movement |
+| effects fast | 3800 / 1.0 | 3800 / 1.0 | color, opacity, quick |
+| effects default | 1600 / 1.0 | 1600 / 1.0 | color, opacity |
+| effects slow | 800 / 1.0 | 800 / 1.0 | color, opacity, gentle |
 
-Spatial springs (position, size, shape morph) overshoot slightly; effects springs (color, opacity) never overshoot.
+Spatial springs (position, size, shape morph) can overshoot (visibly so in Expressive, damping 0.6 to 0.8); effects springs (color, opacity) never overshoot. Source: `StandardMotionTokens` and `ExpressiveMotionTokens` in Compose Material3.
 
 ## Motion: rules of thumb
 
